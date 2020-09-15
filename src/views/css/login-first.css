@@ -1,0 +1,25 @@
+.title {
+    font-family: sans-serif;
+    text-align: center;
+    color: #505050;
+}
+
+.loginform {
+    margin-top: 60px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 40px;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 2px;
+}
+
+#hidden {
+    display: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.ui-keyboard span { font-size: 1.4em; }
+.ui-keyboard-button { height: 4em; width: 3.5em; margin: .2em; cursor: pointer; }

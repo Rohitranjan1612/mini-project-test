@@ -1,4 +1,5 @@
 let config = require('../config');
+let log = require('../log');
 
 let mysqlHost = config.host;
 let mysqlUser = config.mysql_user;

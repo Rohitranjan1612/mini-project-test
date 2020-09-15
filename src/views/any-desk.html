@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/any_desk.css" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"
+    />
+
+    <title>Continuous Rail Thermometer</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title well">Any Desk Details</h1>
+      <hr />
+      <div id="aform" class="container">
+        <p>
+          Make sure CRT is connected with internet with help of wifi.<br>To get anydesk details click here.
+        </p>
+        <div class="form-row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-primary" id="submit">
+              click
+            </button>
+            <button class="btn btn-secondary" id="back">Back</button>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+        <br />
+        <div class="form-row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                rows="5"
+                id="data"
+                disabled
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-info" role="alert" id="hidden"></div>
+      </div>
+    </div>
+
+    <script>
+      window.$ = window.jQuery = require("jquery/dist/jquery");
+    </script>
+    <script type="text/javascript">
+      require("bootstrap/dist/js/bootstrap");
+    </script>
+    <script type="text/javascript">
+      require("./scripts/any-desk");
+    </script>
+  </body>
+</html>

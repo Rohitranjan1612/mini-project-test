@@ -1,0 +1,75 @@
+.title {
+    font-family: sans-serif;
+    text-align: center;
+    color: #505050;
+}
+
+#info {
+    margin-top: 30px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #505050;
+}
+
+#label {
+    margin-left: 10px;
+    font-weight: normal;
+    font-family: sans-serif;
+    color: #505050;
+}
+
+#form {
+    margin-top: 40px;
+    /*margin-bottom: 10px;*/
+    padding: 20px;
+    padding-bottom: 60px;
+    /*border-style: solid;
+    border-radius: 20px;
+    border-width: 2px;*/
+}
+
+.invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+#hidden {
+    display: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#data {
+    margin-top: 80px;
+}
+
+#bt {
+    padding-top: 20px;
+    margin-top: 20px;
+    /*border-style: solid;
+    border-radius: 20px;
+    border-width: 2px;*/
+}
+
+#bt button {
+    /*width: 280px;*/
+    height: 60px;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+
+#back {
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#hidden {
+    display: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.ui-keyboard span { font-size: 1.4em; }
+.ui-keyboard-button { height: 4em; width: 3.5em; margin: .2em; cursor: pointer; }

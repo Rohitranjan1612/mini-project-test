@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./css/display-data.css" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/jquery-ui-dist/jquery-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/virtual-keyboard/dist/css/keyboard.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"
+    />
+
+    <title>Continuous Rail Thermometer</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title well">Display & Transfer Data</h1>
+      <div id="form">
+        <form class="form" id="asd">
+          <div class="form-row">
+            <div class="form-group col-sm-3">
+              <label for="select">Enter time interval</label>
+              <select class="form-control" id="select">
+                <option>5 mins</option>
+                <option>10 mins</option>
+                <option>15 mins</option>
+                <option>30 mins</option>
+                <option>45 mins</option>
+                <option>60 mins</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="start-time">Start time</label>
+                <div class="input-group date" id="datetimepicker1">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="start time"
+                    id="start-time"
+                  />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="end-time">End time</label>
+                <div class="input-group date" id="datetimepicker2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="end time"
+                    id="end-time"
+                  />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-1">
+              <button type="submit" class="btn btn-primary" id="submit">
+                Submit
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-8 col-sm-6">
+              <textarea
+                class="form-control"
+                rows="10"
+                id="data"
+                disabled
+              ></textarea>
+            </div>
+            <div class="col-xs-4 col-sm-6">
+              <div id="form" class="">
+                <form class="form" id="transferForm">
+                  <p>
+                    To transfer data first create files by viewing data in the
+                    above view.
+                  </p>
+                  <label id="label"
+                    >Enter name of the pen drive to transfer data</label
+                  >
+                  <div class="form-row">
+                    <div class="form-group col-sm-5">
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="pd_name"
+                        placeholder="Name of the Pen Drive"
+                        id="pd_name"
+                        value="CRT"
+                      />
+                    </div>
+                    <div class="col-sm-3">
+                      <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="transfer"
+                        disabled="true"
+                      >
+                        Transfer
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <button class="btn btn-secondary" id="back">Back</button>
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+        </form>
+        <div class="alert alert-info" role="alert" id="hidden"></div>
+      </div>
+    </div>
+    <script>
+      window.$ = window.jQuery = require("jquery/dist/jquery");
+    </script>
+    <script type="text/javascript">
+      require("jquery-ui-dist/jquery-ui.min.js");
+    </script>
+    <script type="text/javascript">
+      require("virtual-keyboard/dist/js/jquery.keyboard.js");
+    </script>
+    <script type="text/javascript">
+      require("virtual-keyboard/dist/js/jquery.keyboard.extension-typing.min.js");
+    </script>
+    <script type="text/javascript">
+      require("moment/moment");
+    </script>
+    <script type="text/javascript">
+      require("bootstrap/dist/js/bootstrap");
+    </script>
+    <script type="text/javascript">
+      require("eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker");
+    </script>
+    <script type="text/javascript">
+      require("./scripts/display-data");
+    </script>
+    <script type="text/javascript">
+      $("#pd_name")
+        .keyboard({
+          layout: "custom",
+          customLayout: {
+            default: [
+              "1 2 3 4 5 6 7 8 9 0",
+              "q w e r t y u i o p",
+              "a s d f g h j k l",
+              "{s} z x c v b n m {b}",
+              "{a} {c}",
+            ],
+            shift: [
+              "1 2 3 4 5 6 7 8 9 0",
+              "Q W E R T Y U I O P",
+              "A S D F G H J K L",
+              "{s} Z X C V B N M {b}",
+              "{a} {c}",
+            ],
+          },
+          // maxLength: 4,
+        })
+        // activate the typing extension
+        .addTyping({
+          showTyping: true,
+          delay: 50,
+        });
+      $(function () {
+        var moment = require("moment/moment");
+        $("#datetimepicker1").datetimepicker({
+          defaultDate: moment().add(-20, "days"),
+          format: "DD/MM/YYYY HH:mm",
+        });
+        $("#datetimepicker2").datetimepicker({
+          defaultDate: moment().add(-1, "days"),
+          format: "DD/MM/YYYY HH:mm",
+        });
+        $("#datetimepicker2").datetimepicker({
+          useCurrent: false, //Important! See issue #1025
+        });
+        $("#datetimepicker1").on("dp.change", function (e) {
+          $("#datetimepicker2").data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker2").on("dp.change", function (e) {
+          $("#datetimepicker1").data("DateTimePicker").maxDate(e.date);
+        });
+      });
+    </script>
+  </body>
+</html>

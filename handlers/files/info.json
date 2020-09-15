@@ -1,0 +1,5 @@
+{
+    "dir": "This is the files directory.",
+    "file": "This is the info file always present in this directory",
+    "warn": "Do not delete this file."
+}

@@ -1,0 +1,25 @@
+.title {
+    font-family: sans-serif;
+    text-align: center;
+    color: #505050;
+}
+
+#submit, #back {
+    margin: 10px;
+    margin-top: 20px;
+}
+
+#aform {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#hidden {
+    display: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 150px;
+}

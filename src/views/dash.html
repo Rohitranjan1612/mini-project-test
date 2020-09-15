@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/dash.css" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>Continuous Rail Thermometer</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+          <h1 class="title well">DASHBOARD</h1>
+        </div>
+        <div class="col-xs-1"></div>
+      </div>
+      <div id="bt">
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-5">
+            <button type="button" class="btn btn-primary btn-block" id="temp">
+              Show Temperature
+            </button>
+          </div>
+          <div class="col-xs-5">
+            <button type="button" class="btn btn-primary btn-block" id="time">
+              Set Date and Time
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-5">
+            <button type="button" class="btn btn-primary btn-block" id="set">
+              Set Sensor Unit Parameters
+            </button>
+          </div>
+          <div class="col-xs-5">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              id="display"
+            >
+              Display & Transfer Data
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-5">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              id="truncate"
+            >
+              Delete All Recorded Data
+            </button>
+          </div>
+          <div class="col-xs-5">
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              id="anydesk"
+            >
+              Any Desk Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require("./scripts/dash");
+    </script>
+  </body>
+</html>

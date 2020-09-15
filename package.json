@@ -1,29 +1,45 @@
 {
-  "name": "electron-quick-start",
+  "name": "crtapp-v3",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "description": "",
+  "main": "src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --linux"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "rohit <rohitranjan1612@gmail.com>",
+  "license": "UNLICENSED",
   "devDependencies": {
-    "electron": "^10.1.1"
+    "electron": "^10.1.1",
+    "electron-builder": "^22.8.0"
   },
   "dependencies": {
     "axios": "^0.20.0",
     "bluebird": "^3.7.2",
     "bootstrap": "^4.5.2",
+    "bunyan": "^1.8.14",
     "ds18b20-raspi": "^0.3.5",
-    "mysql2": "^2.1.0"
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "jquery": "^3.5.1",
+    "jquery-ui-dist": "^1.12.1",
+    "moment": "^2.27.0",
+    "mysql2": "^2.1.0",
+    "onoff": "^6.0.0",
+    "popper.js": "^1.14.3",
+    "virtual-keyboard": "^1.28.3"
+  },
+  "build": {
+    "appId": "com.janez.electron-quick-start",
+    "linux": {
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "armv7l"
+          ]
+        }
+      ]
+    }
   }
 }

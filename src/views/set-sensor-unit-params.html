@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/set-sensor-unit-params.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../node_modules/virtual-keyboard/dist/css/keyboard.min.css">
+    <title>Continuous Train Speed Logger</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title well">Set Sensor Unit Parameters</h1>
+        <div class="container form" id="aform">
+        <form class="form" id="form">
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="r_name">Railway Name</label>
+              <input type="text" class="form-control" id="r_name" placeholder="xxxx" maxlength="4" style="text-transform:uppercase">
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="d_name">Division Name</label>
+              <input type="text" class="form-control" id="d_name" placeholder="xxxx" maxlength="4" style="text-transform:uppercase">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="s_name">Station Name</label>
+              <input type="text" class="form-control" id="s_name" placeholder="xxxx" maxlength="4" style="text-transform:uppercase">
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="max_limit">Maximum Temperature Limit</label>
+              <input type="number" class="form-control" id="max_limit" placeholder="xxxx" maxlength="4" style="text-transform:uppercase">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="min_limit">Minimum Temperature Limit</label>
+              <input type="number" class="form-control" id="min_limit" placeholder="xxxx" maxlength="4" style="text-transform:uppercase">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-sm-5">
+              <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+              <button type="back" class="btn btn-default" id="back">Back</button>
+            </div>
+            <div class="col-sm-7">
+              <div class="alert alert-danger" role="alert" id="hidden"></div>
+            </div>
+
+          </div>
+        </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">require('./scripts/set-sensor-unit-params')</script>
+    <script>window.$ = window.jQuery = require('jquery/dist/jquery');</script>
+    <script type="text/javascript">require('jquery-ui-dist/jquery-ui.min.js')</script>
+    <script type="text/javascript">require('virtual-keyboard/dist/js/jquery.keyboard.js')</script>
+    <script type="text/javascript">require('virtual-keyboard/dist/js/jquery.keyboard.extension-typing.min.js')</script>
+    <script type="text/javascript">
+      $('#r_name').keyboard({
+          layout: 'custom',
+          customLayout: {
+            'default': [
+              'q w e r t y u i o p',
+              'a s d f g h j k l',
+              'z x c v b n m {b}',
+              '{a} {c}'
+            ]
+          },
+          maxLength: 4,
+      })
+      // activate the typing extension
+      .addTyping({
+          showTyping: true,
+          delay: 50
+      });
+
+      $('#d_name').keyboard({
+          layout: 'custom',
+          customLayout: {
+            'default': [
+              'q w e r t y u i o p',
+              'a s d f g h j k l',
+              'z x c v b n m {b}',
+              '{a} {c}'
+            ]
+          },
+          maxLength: 4,
+      })
+      // activate the typing extension
+      .addTyping({
+          showTyping: true,
+          delay: 50
+      });
+
+      $('#s_name').keyboard({
+          layout: 'custom',
+          customLayout: {
+            'default': [
+              'q w e r t y u i o p',
+              'a s d f g h j k l',
+              'z x c v b n m {b}',
+              '{a} {c}'
+            ]
+          },
+          maxLength: 4,
+      })
+      // activate the typing extension
+      .addTyping({
+          showTyping: true,
+          delay: 50
+      });
+
+      $('#max_limit').keyboard({
+          layout: 'custom',
+          customLayout: {
+            'default': [
+              '1 2 3',
+              '4 5 6',
+              '7 8 9',
+              '0 {b}',
+              '{a} {c}'
+            ]
+          },
+          maxLength: 3,
+      })
+      // activate the typing extension
+      .addTyping({
+          showTyping: true,
+          delay: 50
+      });
+
+      $('#min_limit').keyboard({
+          layout: 'custom',
+          customLayout: {
+            'default': [
+              '1 2 3',
+              '4 5 6',
+              '7 8 9',
+              '- 0 {b}',
+              '{a} {c}'
+            ]
+          },
+          maxLength: 3,
+      })
+      // activate the typing extension
+      .addTyping({
+          showTyping: true,
+          delay: 50
+      });
+    </script>
+</body>
+</html>

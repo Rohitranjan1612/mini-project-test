@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../node_modules/virtual-keyboard/dist/css/keyboard.min.css">
+    <title>Continuous Rail Thermometer</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title well">Continuous Rail Thermometer</h1>
+        <form class="loginform">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <button class="btn btn-primary" id="submit">Submit</button>
+          <button class="btn btn-default" id="forgetPassword">Forget Password</button>
+          <button class="btn btn-default" id="back">Back</button>
+        </form>
+        <div class="alert alert-danger" role="alert" id="hidden"></div>
+    </div>
+
+    <script type="text/javascript">require('./scripts/login')</script>
+    <script>window.$ = window.jQuery = require('jquery/dist/jquery');</script>
+    <script type="text/javascript">require('jquery-ui-dist/jquery-ui.min.js')</script>
+    <script type="text/javascript">require('virtual-keyboard/dist/js/jquery.keyboard.js')</script>
+    <script type="text/javascript">require('virtual-keyboard/dist/js/jquery.keyboard.extension-typing.min.js')</script>
+    <script type="text/javascript">
+      $('#password').keyboard({
+          layout: 'custom',
+          customLayout: {
+            'default': [
+              '1 2 3 4 5 6 7 8 9 0',
+              'q w e r t y u i o p',
+              'a s d f g h j k l',
+              '{s} z x c v b n m {b}',
+              '{a} {c}'
+            ],
+            'shift': [
+              '1 2 3 4 5 6 7 8 9 0',
+              'Q W E R T Y U I O P',
+              'A S D F G H J K L',
+              '{s} Z X C V B N M {b}',
+              '{a} {c}'
+            ],
+          },
+          // maxLength: 4,
+      })
+      // activate the typing extension
+      .addTyping({
+          showTyping: true,
+          delay: 50
+      });
+    </script>
+</body>
+</html>

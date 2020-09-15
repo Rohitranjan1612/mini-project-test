@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/login-first.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/jquery-ui-dist/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../node_modules/virtual-keyboard/dist/css/keyboard.min.css">
+    <link rel="stylesheet" href="../../node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css">
+    <title>Continuous Rail Thermometer</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title well">Continuous Rail Thermometer</h1>
+        <form class="loginform">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password"><br>
+            <!-- <label for="password">Start Recording From:</label>
+            <div class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" placeholder="time" id="time" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div> -->
+          </div>
+          <button class="btn btn-primary" id="submit">Submit</button>
+          <button class="btn btn-default" id="forgetPassword">Forget Password</button>
+        </form>
+        <div class="alert alert-danger" role="alert" id="hidden"></div>
+    </div>
+
+    <script type="text/javascript">require('./scripts/login-first')</script>
+    <script>window.$ = window.jQuery = require('jquery/dist/jquery');</script>
+    <script type="text/javascript">require('jquery-ui-dist/jquery-ui.min.js')</script>
+    <script type="text/javascript">require('eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker')</script>
+    <script type="text/javascript">require('virtual-keyboard/dist/js/jquery.keyboard.js')</script>
+    <script type="text/javascript">require('virtual-keyboard/dist/js/jquery.keyboard.extension-typing.min.js')</script>
+    <script type="text/javascript">
+      $('#password').keyboard({
+          layout: 'custom',
+          customLayout: {
+            'default': [
+              '1 2 3 4 5 6 7 8 9 0',
+              'q w e r t y u i o p',
+              'a s d f g h j k l',
+              '{s} z x c v b n m {b}',
+              '{a} {c}'
+            ],
+            'shift': [
+              '1 2 3 4 5 6 7 8 9 0',
+              'Q W E R T Y U I O P',
+              'A S D F G H J K L',
+              '{s} Z X C V B N M {b}',
+              '{a} {c}'
+            ],
+          },
+          // maxLength: 4,
+      })
+      // activate the typing extension
+      .addTyping({
+          showTyping: true,
+          delay: 50
+      });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+          var moment = require('moment/moment');
+            $('#datetimepicker1').datetimepicker({
+              defaultDate: moment().add(10, 'minutes'),
+              minDate:new Date()
+            });
+            });
+    </script>
+</body>
+</html>

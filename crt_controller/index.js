@@ -27,7 +27,6 @@ const tracker = () => {
         previousTemp.push(currentTemp);
         if (previousTemp.length > 10)
         {
-            console.error("error in recording, problem with the sensor");
             // showError("error in recording, problem with the sensor");
         }
     }
@@ -41,7 +40,6 @@ const tracker = () => {
                 console.log({resp}, "[fetchQuery] tracker");
                 if(Math.abs(resp.current_temp - currentTemp) > 30)
                 {
-                    console.error("error in recording, problem with the sensor");
                     // showError("error in recording, problem with the sensor");
                 }
                 else {

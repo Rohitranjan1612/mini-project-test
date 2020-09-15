@@ -1,0 +1,48 @@
+.title {
+  font-family: sans-serif;
+  text-align: center;
+  color: #505050;
+}
+
+.form {
+  /* margin-top: 20px; */
+  /* padding: 20px; */
+  /*border-style: solid;
+    border-radius: 20px;
+    border-width: 2px;*/
+}
+
+.invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+#hidden {
+  display: none;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+#data {
+  /* margin-top: 80px; */
+}
+#submit {
+  margin-top: 25px;
+}
+#back,
+#all_data {
+  width: 120px;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.ui-keyboard span {
+  font-size: 1.4em;
+}
+.ui-keyboard-button {
+  height: 4em;
+  width: 3.5em;
+  margin: 0.2em;
+  cursor: pointer;
+}
